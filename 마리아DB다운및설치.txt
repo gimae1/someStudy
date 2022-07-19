@@ -1,0 +1,73 @@
+1. MariaDB 다운로드
+https://mariadb.org/download/ 
+MariaDB Server탭에서 MariaDB Server Version선택하기 10.3버전만 선택 후 
+아래 설정 그대로 두고 Download버튼 클릭-> mariadb-10.3.31-winx64.msi파일 저장
+
+2. MariaDB 설치하기
+다운 받은 파일 실행 -> 모두 기본값 설정 그대로 두고 next-> 동의에 체크 -> next -> 설치할 곳 c:\MariaDB 10.3 경로에 설치 -> 패스워드 입력, 패스워드 확인 후 꼭 utf-8설정하는 부분에 체크하기 (단, remote user어쩌고 나오는 거는 체크하지 말것) > 이후 next(체크하는 것 하지 말것) -> install -> finish
+
+3. MariaDB 접속하기
+시작 -> MariaDB 10.3 선택 -> MySQL Client (MariaDB 10.3) 프롬프트 클릭
+-> mysql -u root -p 입력 후 엔터 -> 비밀번호 입력: 1234
+
+계정에 여러개의 DB가 연결된 것으로 root계정 로그인만 되면 데이터베이스는 별도로 접속 비번이 필요없다.
+
+데이터베이스(오라클의 계정과 동일한 의미임) 목록 보기
+> show databases; 
+
+test데이터베이스로 전환하기 
+> use test; (오라클: conn test/비번)
+
+종료하기 : exit > exit
+
+
+4.윈도우 콘솔창에서 실행하기
+윈도우 + R키  -> 콘솔창에서 mysql -u root -p 입력 후 엔터
+에러가 뜨면 환경변수 설정하기. 콘솔창은 종료해줄 것
+
+
+C:\MariaDB 10.3\bin 경로 복사하기
+
+> 내pc -> 속성 -> 고급시스템 설정 -> 고급 탭의 [환경변수] 클릭 -> 시스템변수 설정 부분에서 path 목록 선택 후 편집 -> 새로만들기 -> C:\MariaDB 10.3\bin 붙여넣기 후 확인 
+
+다시 윈도우 콘솔창에서 실행하기
+윈도우 + R키  -> 콘솔창에서 mysql -u root -p 입력 후 엔터 
+
+**환경변수 설정해도 에러나면 시스템에서 지원이 안되는 것으로 시작 -> MariaDB 10.3 선택 -> MySQL Client (MariaDB 10.3) 프롬프트를 이용하라 할 것
+===========================================
+콘솔창에서 쿼리문 실행해보기
+
+5.heidiSQL연동하기
+
+
+
+6.통합개발환경(IDE : 이클립스)과 데이터베이스 연동하기
+- 해당 jar파일 받기
+- mariaDB : maven에서 mariaDB로 검색 -> 1. MariaDB Java Client (org.mariadb.jdbc » mariadb-java-client) 클릭 -> 2.7버전대에서 가장 많이 다운받은 것 클릭(2.7.3) -> jar다운 받기
+- mysql :  maven에서 mysql로 검색 -> MySQL Connector/J( mysql » mysql-connector-java)  클릭 -> 5.1버전대에서 가장 많이 다운받은 것 클릭(5.1.38) -> jar파일 다운받기
+- oracle : C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar 
+
+
+> 위의 jar파일을 jsp프로젝트의 WebContent -> WEB-INF -> lib에 끌어다 놓음
+>공통으로 설정할 부분
+String user = "사용자계정명"; 
+String password = "사용자비번";
+String url = "사용할DB의 url"; 
+Class.forName("사용할드라이버");
+conn = DriverManager.getConnection(url, user, password);
+jdbc:데이터베이스종류://ip주소 또는 서버이름:DB포트번호/데이터베이스명(mariaDB, mySQL) 또는 전역데이터베이스명(oracle)
+
+mariaDB의 url, 드라이버 => 
+String url = "jdbc:mariadb://localhost:3306/jspbookdb"; 
+Class.forName("org.mariadb.jdbc.Driver");
+
+mySQL의 url, 드라이버 =>
+String url = "jdbc:mysql://localhost:3306/jspbookdb"; 
+Class.forName("com.mysql.jdbc.Driver"); 
+
+oracle의 url, 드라이버 =>
+String url = "jdbc:oracle:thin:@localhost:1521:xe"; 
+Class.forName("oracle.jdbc.driver.OracleDriver"); 
+
+	
+

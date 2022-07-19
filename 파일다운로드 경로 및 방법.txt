@@ -1,0 +1,82 @@
+설치 경로 모두 default(자동 설정값)로 처리함.
+
+JDK다운로드: jdk 1.8버전 x64버전으로 설치(jre포함)
+설치 경로 : C:\Program Files\Java\jdk1.8.0_333
+- https://www.oracle.com/java/technologies/downloads/#java8-windows
+- Windows탭 선택
+- x64 Installer > Download의 jdk-8u333-windows-x64.exe다운로드
+>실행 -> C:\Program Files -> Java 폴더 안에 jdk, jre모두 설치하기
+환경변수 설정하기
+시스템 변수 생성하기
+- 변수명: JAVA_HOME
+- 경로: C:\Program Files\Java\jdk1.8.0_333
+- PATH : %JAVA_HOME%\bin
+
+
+Nodejs참고
+- Nodejs 안정버전으로 설치 (환경변수 자동으로 설정됨) : chocolatly 체크 제외할 것
+- https://nodejs.org/ko/ 
+- 다운로드 클릭 > 다운로드 최신 LTS 버전: 16.15.0 (includes npm 8.5.5)
+- Windows Installer (.msi) 64-bit 클릭 
+- 파일명: node-v16.15.0-x64.msi
+>실행하여 설치하기
+설치 경로 및 환경 변수 : C:\Program Files\nodejs\
+================================================================
+
+
+
+Git다운로드
+--Git 최신 버전, x64버전으로 설치 (환경변수 자동으로 설정됨)
+Google홈에서 [ windows - git scm ]로 검색 
+> Git SCM 클릭할 것 (https://git-scm.com/)
+> 우측 모니터 그림의 Latest source Realease 2.36.1 Release Note(2022-05-05) [Dowonload for Windows]클릭
+> Standalone Installer의 [ 64-bit Git for Windows Setup.] 클릭하여 다운로드
+파일명: Git-2.36.1-64-bit.exe [https://jhnyang.tistory.com/457 설치 참고]
+설치 경로 및 환경 변수 : C:\Program Files\Git\cmd
+================================================================
+
+
+
+안드로이드 스튜디오
+- Android Studio 최신 버전으로 설치(환경변수 설정하기)
+- https://developer.android.com/studio?gclid=EAIaIQobChMImOWn7tfW9wIVs9pMAh0VBANbEAAYASAAEgIgoPD_BwE&gclsrc=aw.ds
+- Download options > Platform Windows(64-bit)에서 android-studio-2021.2.1.14-windows.zip파일 다운로드
+- 파일명: android-studio-2021.2.1.14-windows.zip
+- C:\Program Files 폴더 안에서 압축해제하면 android-studio폴더 생성(하위 메뉴 포함)
+- 안드로이드 스튜디오 실행하기: 
+C:\Program Files\android-studio\bin폴더 안의 studio64.exe파일 실행
+> Don't send 클릭 > Next > 설치(실행) 됨. > Welcome to Android Studio 창 나오면 More actions클릭 
+> SDK Manager클릭 (자세한 패키지를 확인하려면 우측 하단의 Show Package Details선택
+원하는 버전 선택 후 우측 하단의 OK누르면 버전별 데이터가 생성됨.
+생성경로 : C:\Users\ikaro\AppData\Local\Android\Sdk
+SDK Platforms는 platform-tools에 버전별 데이터 생성됨.
+SDK Tools는 build-tools에 버전별 데이터 생성됨.
+
+설치 경로 : C:\Users\ikaro\AppData\Local\Android\Sdk
+시스템 변수 생성하기 
+- 변수명: ANDROID_HOME
+- 경로 : C:\Users\ikaro\AppData\Local\Android\Sdk
+Path설정
+- %ANDROID_HOME%\cmdline-tools\latest\bin
+- %ANDROID_HOME%\build-tools
+- %ANDROID_HOME%\platform-tools
+================================================================
+
+
+Gradle 다운 및 설치(환경변수 설정하기)
+- https://docs.gradle.org/current/userguide/what_is_gradle.html#what_is_gradle
+- 좌측의 Quick Start메뉴에서 Installing Gradle 선택 
+- Installing manually 아래의 Download 글씨 클릭
+- Getting Started Resources의 v7.4.2 Mar 31, 2022 아래의 
+Download : binary-only or complete (checksums)중 complete글씨 클릭
+- 파일명: gradle-7.4.2-all.zip
+>>C:\ 안에 Gradle폴더 만든 후 그 안에서 압축해제 > gradle-7.4.2 폴더 생성됨.(하위 메뉴 포함)
+
+시스템 변수 생성하기
+- 변수명: GRADLE_HOME
+- 경로: C:\Gradle\gradle-7.4.2
+Path설정
+- %GRADLE_HOME%\bin
+
+
+

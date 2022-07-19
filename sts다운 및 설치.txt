@@ -1,0 +1,14 @@
+
+https://spring.io/tools
+=> Looking for Spring Tool Suite 3?
+Find more information about version 3 of the Spring Tool Suite on the 
+[ Spring Tool Suite 3 wiki ] <=이 부분 클릭하기
+
+including downloads, update site URLs, references to the new and noteworthy pages, and details of how to upgrade to Spring Tools 4.
+
+
+=> https://github.com/spring-projects/toolsuite-distribution/wiki/Spring-Tool-Suite-3 페이지로 이동됨.
+=> Spring Tool Suite 3.9.13 (New and Noteworthy)
+=> full distribution on Eclipse 4.16
+=> Windows Based on Eclipse 4.16.0 의 WIN, 64BIT zip 파일 다운로드
+https://download.springsource.com/release/STS/3.9.13.RELEASE/dist/e4.16/spring-tool-suite-3.9.13.RELEASE-e4.16.0-win32-x86_64.zip
